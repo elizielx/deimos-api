@@ -12,7 +12,7 @@ const jestConfig: JestConfigWithTsJest = {
         "^.+.(t|j)s$": "ts-jest",
     },
     collectCoverageFrom: ["**/.(t|j)s"],
-    coverageDirectory: "../coverage",
+    coverageDirectory: "./coverage",
     moduleFileExtensions: ["js", "json", "ts"],
     modulePaths: [compilerOptions.baseUrl],
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),

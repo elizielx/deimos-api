@@ -1,0 +1,58 @@
+name: Continuous Integration
+
+on:
+    pull_request: {}
+    push:
+        branches:
+            - master
+
+concurrency:
+    group: ${{ github.job }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    lint:
+        name: Lint code
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 20
+                  cache: "yarn"
+            - name: Install dependencies
+              uses: bahmutov/npm-install@v1
+            - name: Lint code
+              run: yarn lint
+    test:
+        name: Test code
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 20
+                  cache: "yarn"
+            - name: Install dependencies
+              uses: bahmutov/npm-install@v1
+            - name: Test code
+              run: yarn test
+    format:
+        name: Format code
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 20
+                  cache: "yarn"
+            - name: Install dependencies
+              uses: bahmutov/npm-install@v1
+            - name: Format code
+              run: yarn format:check
