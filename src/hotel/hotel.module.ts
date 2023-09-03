@@ -6,7 +6,7 @@ import { CqrsModule } from "@nestjs/cqrs";
 
 const infrastructure: Provider[] = [
     {
-        provide: InjectionToken.ROOMS_REPOSITORY,
+        provide: InjectionToken.ROOM_REPOSITORY,
         useClass: RoomRepositoryImplement,
     },
 ];
