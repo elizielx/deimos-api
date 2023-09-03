@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FindRoomsRequestQueryString matches the snapshot 1`] = `
+FindRoomsRequestQueryString {
+  "skip": 5,
+  "take": 10,
+}
+`;

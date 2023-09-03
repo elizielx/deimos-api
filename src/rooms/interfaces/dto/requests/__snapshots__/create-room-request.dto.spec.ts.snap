@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateRoomRequestDto matches the snapshot 1`] = `
+CreateRoomRequestDto {
+  "number": 101,
+  "rate": 100,
+  "status": "available",
+  "type": "single",
+}
+`;
