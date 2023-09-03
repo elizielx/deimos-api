@@ -1,11 +1,12 @@
+import { WrapperType } from "@/utils/wrapper-type.helper";
+
 import { Inject, forwardRef } from "@nestjs/common";
 import { IQueryHandler, QueryHandler } from "@nestjs/cqrs";
 
-import { InjectionToken } from "../../injection-token";
 import { FindRoomQuery } from "../../contracts/queries/find-room.query";
 import { FindRoomResult } from "../../contracts/queries/find-room.result";
 import { RoomQuery } from "../../contracts/queries/room-query";
-import { WrapperType } from "@/utils/wrapper-type.helper";
+import { InjectionToken } from "../../injection-token";
 
 @QueryHandler(FindRoomQuery)
 export class FindRoomHandler implements IQueryHandler<FindRoomQuery, FindRoomResult> {

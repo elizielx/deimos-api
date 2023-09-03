@@ -1,5 +1,6 @@
-import { Test, TestingModule } from "@nestjs/testing";
 import { EventPublisher } from "@nestjs/cqrs";
+import { Test, TestingModule } from "@nestjs/testing";
+
 import { RoomFactory } from "./room.factory";
 
 describe("RoomFactory", () => {

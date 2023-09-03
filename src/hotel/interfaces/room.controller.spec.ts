@@ -1,9 +1,10 @@
-import { Test, TestingModule } from "@nestjs/testing";
 import { QueryBus } from "@nestjs/cqrs";
-import { RoomController } from "./room.controller";
+import { Test, TestingModule } from "@nestjs/testing";
+
 import { FindRoomQuery } from "../application/contracts/queries/find-room.query";
 import { FindRoomsRequestQueryString } from "./dto/requests/find-room.querystring";
 import { FindRoomsResponseDto } from "./dto/responses/find-room-response.dto";
+import { RoomController } from "./room.controller";
 
 describe("RoomController", () => {
     let controller: RoomController;

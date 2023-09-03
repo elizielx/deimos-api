@@ -1,5 +1,6 @@
 import { writeConnection } from "@/database/domain/services/database.service";
 import { EntityId } from "@/database/infrastructure/entities/entity-id.entity";
+import { WrapperType } from "@/utils/wrapper-type.helper";
 
 import { Inject, forwardRef } from "@nestjs/common";
 
@@ -7,7 +8,6 @@ import { RoomFactory } from "../../domain/factories/room.factory";
 import { Room, RoomProperties } from "../../domain/models/room.model";
 import { RoomRepository } from "../../domain/repositories/room.repository";
 import { RoomEntity } from "../entities/room.entity";
-import { WrapperType } from "@/utils/wrapper-type.helper";
 
 export class RoomRepositoryImplement implements RoomRepository {
     @Inject(forwardRef(() => RoomFactory)) private readonly roomFactory: WrapperType<RoomFactory>;

@@ -1,11 +1,12 @@
 import { Module, Provider } from "@nestjs/common";
-import { RoomFactory } from "./domain/factories/room.factory";
-import { InjectionToken } from "./application/injection-token";
-import { RoomRepositoryImplement } from "./infrastructure/repositories/room-repository.implement";
 import { CqrsModule } from "@nestjs/cqrs";
-import { RoomController } from "./interfaces/room.controller";
-import { RoomQueryImplement } from "./infrastructure/queries/room-query.implement";
+
 import { FindRoomHandler } from "./application/handlers/query-handlers/find-room.handler";
+import { InjectionToken } from "./application/injection-token";
+import { RoomFactory } from "./domain/factories/room.factory";
+import { RoomQueryImplement } from "./infrastructure/queries/room-query.implement";
+import { RoomRepositoryImplement } from "./infrastructure/repositories/room-repository.implement";
+import { RoomController } from "./interfaces/room.controller";
 
 const infrastructure: Provider[] = [
     {

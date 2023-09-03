@@ -6,5 +6,10 @@
     "singleQuote": false,
     "arrowParens": "always",
     "quoteProps": "consistent",
-    "printWidth": 120
+    "printWidth": 120,
+    "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "importOrder": ["^@nestjs/(.*)$", "^@core/(.*)$", "^@features/(.*)$", "^@infra/(.*)$", "^@utils/(.*)$", "^[./]"],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
 }

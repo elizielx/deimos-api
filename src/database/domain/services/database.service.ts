@@ -1,6 +1,5 @@
 import { Config } from "@/config";
 import { RoomEntity } from "@/hotel/infrastructure/entities/room.entity";
-import { Injectable, OnModuleDestroy, OnModuleInit } from "@nestjs/common";
 import {
     DataSource,
     EntityManager,
@@ -10,6 +9,8 @@ import {
     Repository,
     SelectQueryBuilder,
 } from "typeorm";
+
+import { Injectable, OnModuleDestroy, OnModuleInit } from "@nestjs/common";
 
 interface WriteConnection {
     readonly startTransaction: (

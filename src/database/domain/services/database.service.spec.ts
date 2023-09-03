@@ -1,5 +1,6 @@
 import { Test, TestingModule } from "@nestjs/testing";
-import { DatabaseService, writeConnection, readConnection } from "./database.service";
+
+import { DatabaseService, readConnection, writeConnection } from "./database.service";
 
 describe("DatabaseService", () => {
     let databaseService: DatabaseService;

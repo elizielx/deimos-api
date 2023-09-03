@@ -1,5 +1,6 @@
 import { plainToClass } from "class-transformer";
 import { validate } from "class-validator";
+
 import { FindRoomsRequestQueryString } from "./find-room.querystring";
 
 describe("FindRoomsRequestQueryString", () => {

@@ -1,3 +1,6 @@
+import { DatabaseService } from "@/database/domain/services/database.service";
+
+import { EventPublisher } from "@nestjs/cqrs";
 import { Test, TestingModule } from "@nestjs/testing";
 import { getRepositoryToken } from "@nestjs/typeorm";
 
@@ -5,8 +8,6 @@ import { RoomFactory } from "../../domain/factories/room.factory";
 import { RoomRepository } from "../../domain/repositories/room.repository";
 import { RoomEntity } from "../entities/room.entity";
 import { RoomRepositoryImplement } from "./room-repository.implement";
-import { EventPublisher } from "@nestjs/cqrs";
-import { DatabaseService } from "@/database/domain/services/database.service";
 
 describe("RoomsRepositoryImplement", () => {
     let roomFactory: RoomFactory;

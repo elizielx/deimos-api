@@ -1,8 +1,9 @@
+import { WrapperType } from "@/utils/wrapper-type.helper";
+
 import { Inject, forwardRef } from "@nestjs/common";
 import { EventPublisher } from "@nestjs/cqrs";
 
 import { Room, RoomImplement, RoomProperties } from "../models/room.model";
-import { WrapperType } from "@/utils/wrapper-type.helper";
 
 type CreateRoomOptions = Readonly<{
     id: string;

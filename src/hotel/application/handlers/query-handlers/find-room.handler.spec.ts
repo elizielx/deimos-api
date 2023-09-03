@@ -1,8 +1,9 @@
 import { Test } from "@nestjs/testing";
-import { FindRoomHandler } from "./find-room.handler";
+
 import { FindRoomQuery } from "../../contracts/queries/find-room.query";
 import { FindRoomResult } from "../../contracts/queries/find-room.result";
 import { InjectionToken } from "../../injection-token";
+import { FindRoomHandler } from "./find-room.handler";
 
 describe("FindRoomHandler", () => {
     let handler: FindRoomHandler;

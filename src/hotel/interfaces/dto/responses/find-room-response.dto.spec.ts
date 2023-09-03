@@ -1,4 +1,5 @@
 import { validate } from "class-validator";
+
 import { FindRoomsResponseDto } from "./find-room-response.dto";
 
 describe("FindRoomsResponseDto", () => {
