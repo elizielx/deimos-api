@@ -1,21 +1,21 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { getRepositoryToken } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
-import { RoomsQueryImplement } from "./room-query.implement";
+import { RoomQueryImplement } from "./room-query.implement";
 import { RoomEntity } from "../entities/room.entity";
 import { FindRoomQuery } from "@/hotel/application/contracts/queries/find-room.query";
 import { FindRoomResult } from "@/hotel/application/contracts/queries/find-room.result";
 import { DatabaseService } from "@/database/domain/services/database.service";
 
 describe("RoomsQueryImplement", () => {
-    let query: RoomsQueryImplement;
+    let query: RoomQueryImplement;
     let databaseService: DatabaseService;
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
             providers: [
                 DatabaseService,
-                RoomsQueryImplement,
+                RoomQueryImplement,
                 {
                     provide: getRepositoryToken(RoomEntity),
                     useClass: Repository,
@@ -23,7 +23,7 @@ describe("RoomsQueryImplement", () => {
             ],
         }).compile();
 
-        query = module.get<RoomsQueryImplement>(RoomsQueryImplement);
+        query = module.get<RoomQueryImplement>(RoomQueryImplement);
         databaseService = module.get<DatabaseService>(DatabaseService);
 
         await databaseService.onModuleInit();

@@ -8,7 +8,7 @@ import { FindRoomResult } from "@/hotel/application/contracts/queries/find-room.
 import { RoomQuery } from "@/hotel/application/contracts/queries/room-query";
 
 @Injectable()
-export class RoomsQueryImplement implements RoomQuery {
+export class RoomQueryImplement implements RoomQuery {
     public async find(query: FindRoomQuery): Promise<FindRoomResult> {
         return readConnection
             .getRepository(RoomEntity)

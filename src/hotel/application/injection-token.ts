@@ -1,5 +1,5 @@
 export enum InjectionToken {
-    ROOMS_REPOSITORY = "RoomsRepository",
-    ROOMS_QUERY = "RoomsQuery",
+    ROOM_REPOSITORY = "RoomRepository",
+    ROOM_QUERY = "RoomQuery",
     INTEGRATION_EVENT_PUBLISHER = "IntegrationEventPublisher",
 }
