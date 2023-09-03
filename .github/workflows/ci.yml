@@ -46,7 +46,7 @@ jobs:
                   down-flags: "--volumes"
               env:
                   DATABASE_USER: postgres
-                  DATABASE_PASSWOPORTRD: postgres
+                  DATABASE_PASSWORD: postgres
                   DATABASE_NAME: deimos
             - name: Test code
               run: yarn test
