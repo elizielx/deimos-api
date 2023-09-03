@@ -15,11 +15,11 @@ psql:
 
 # Start Docker Compose
 compose-up:
-	docker-compose -f ./docker/docker-compose.yml --env-file ./.env up -d
+	docker-compose -f ./docker-compose.yaml --env-file ./.env up -d
 
 # Stop Docker Compose
 compose-down:
-	docker-compose -f ./docker/docker-compose.yml down
+	docker-compose -f ./docker-compose.yaml down
 
 # -- DOCKER
 
