@@ -44,8 +44,22 @@ jobs:
               with:
                   compose-file: "./docker-compose.yaml"
                   down-flags: "--volumes"
+              env:
+                  DATABASE_USER: postgres
+                  DATABASE_PASSWOPORTRD: postgres
+                  DATABASE_NAME: deimos
             - name: Test code
               run: yarn test
+              env:
+                  DATABASE_HOST: localhost
+                  DATABASE_USER: postgres
+                  DATABASE_PASSWORD: postgres
+                  DATABASE_NAME: deimos
+                  DATABASE_PORT: 5432
+                  DATABASE_SYNC: true
+                  DATABASE_LOGGING: false
+                  PORT: 3000
+                  NODE_ENV: test
     format:
         name: Format code
         runs-on: ubuntu-latest
