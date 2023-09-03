@@ -8,6 +8,6 @@ class Rooms {
     readonly status: string;
 }
 
-export class FindRoomsResponseDTO extends FindRoomResult {
-    readonly rooms: Rooms[];
+export class FindRoomsResponseDto extends FindRoomResult {
+    rooms: Rooms[];
 }

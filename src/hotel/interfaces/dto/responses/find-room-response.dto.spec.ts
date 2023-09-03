@@ -1,7 +1,8 @@
-import { FindRoomsResponseDTO } from "./find-room-response.dto";
+import { validate } from "class-validator";
+import { FindRoomsResponseDto } from "./find-room-response.dto";
 
-describe("FindRoomsResponseDTO", () => {
-    it("should create a new instance of FindRoomsResponseDTO", () => {
+describe("FindRoomsResponseDto", () => {
+    it("should pass validation with valid data", async () => {
         const rooms = [
             {
                 id: "1",
@@ -15,13 +16,12 @@ describe("FindRoomsResponseDTO", () => {
                 number: 102,
                 type: "double",
                 rate: 150,
-                status: "booked",
+                status: "occupied",
             },
         ];
-
-        const findRoomsResponseDTO = new FindRoomsResponseDTO(rooms);
-
-        expect(findRoomsResponseDTO.rooms).toEqual(rooms);
+        const dto = new FindRoomsResponseDto(rooms);
+        const errors = await validate(dto);
+        expect(errors.length).toBe(0);
     });
 
     it("matches the snapshot", () => {
@@ -38,12 +38,10 @@ describe("FindRoomsResponseDTO", () => {
                 number: 102,
                 type: "double",
                 rate: 150,
-                status: "booked",
+                status: "occupied",
             },
         ];
-
-        const findRoomsResponseDTO = new FindRoomsResponseDTO(rooms);
-
-        expect(findRoomsResponseDTO).toMatchSnapshot();
+        const dto = new FindRoomsResponseDto(rooms);
+        expect(dto).toMatchSnapshot();
     });
 });
