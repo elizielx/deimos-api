@@ -64,11 +64,13 @@ describe("RoomsRepositoryImplement", () => {
                 type: "standard",
             });
 
+            jest.spyOn(roomRepository, "save").mockReturnValue(Promise.resolve());
+
             room.create();
             await roomRepository.save(room);
             room.commit();
 
-            console.log(room);
+            expect(roomRepository.save).toBeCalledTimes(1);
         });
     });
 });
