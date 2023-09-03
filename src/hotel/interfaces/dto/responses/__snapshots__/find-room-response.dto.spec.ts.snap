@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FindRoomsResponseDTO matches the snapshot 1`] = `
+FindRoomsResponseDTO {
+  "rooms": [
+    {
+      "id": "1",
+      "number": 101,
+      "rate": 100,
+      "status": "available",
+      "type": "single",
+    },
+    {
+      "id": "2",
+      "number": 102,
+      "rate": 150,
+      "status": "booked",
+      "type": "double",
+    },
+  ],
+}
+`;
