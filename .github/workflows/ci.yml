@@ -39,6 +39,11 @@ jobs:
                   cache: "yarn"
             - name: Install dependencies
               uses: bahmutov/npm-install@v1
+            - name: Setup Docker Compose
+              uses: isbang/compose-action@v1.5.1
+              with:
+                  compose-file: "./docker-compose.yaml"
+                  down-flags: "--volumes"
             - name: Test code
               run: yarn test
     format:
