@@ -1,5 +1,5 @@
 import { Config } from "@/config";
-import { RoomEntity } from "@/rooms/infrastructure/entities/room.entity";
+import { RoomEntity } from "@/hotel/infrastructure/entities/room.entity";
 import { Injectable, OnModuleDestroy, OnModuleInit } from "@nestjs/common";
 import {
     DataSource,

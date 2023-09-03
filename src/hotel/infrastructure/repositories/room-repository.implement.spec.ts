@@ -4,7 +4,7 @@ import { getRepositoryToken } from "@nestjs/typeorm";
 import { RoomFactory } from "../../domain/factories/room.factory";
 import { RoomRepository } from "../../domain/repositories/room.repository";
 import { RoomEntity } from "../entities/room.entity";
-import { RoomsRepositoryImplement } from "./room-repository.implement";
+import { RoomRepositoryImplement } from "./room-repository.implement";
 import { EventPublisher } from "@nestjs/cqrs";
 import { DatabaseService } from "@/database/domain/services/database.service";
 
@@ -17,7 +17,7 @@ describe("RoomsRepositoryImplement", () => {
         const module: TestingModule = await Test.createTestingModule({
             providers: [
                 DatabaseService,
-                RoomsRepositoryImplement,
+                RoomRepositoryImplement,
                 RoomFactory,
                 {
                     provide: EventPublisher,
@@ -37,7 +37,7 @@ describe("RoomsRepositoryImplement", () => {
         }).compile();
 
         roomFactory = module.get<RoomFactory>(RoomFactory);
-        roomRepository = module.get<RoomsRepositoryImplement>(RoomsRepositoryImplement);
+        roomRepository = module.get<RoomRepositoryImplement>(RoomRepositoryImplement);
         databaseService = module.get<DatabaseService>(DatabaseService);
 
         await databaseService.onModuleInit();

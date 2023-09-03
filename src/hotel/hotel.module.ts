@@ -1,13 +1,13 @@
 import { Module, Provider } from "@nestjs/common";
 import { RoomFactory } from "./domain/factories/room.factory";
 import { InjectionToken } from "./application/injection-token";
-import { RoomsRepositoryImplement } from "./infrastructure/repositories/room-repository.implement";
+import { RoomRepositoryImplement } from "./infrastructure/repositories/room-repository.implement";
 import { CqrsModule } from "@nestjs/cqrs";
 
 const infrastructure: Provider[] = [
     {
         provide: InjectionToken.ROOMS_REPOSITORY,
-        useClass: RoomsRepositoryImplement,
+        useClass: RoomRepositoryImplement,
     },
 ];
 const application = [];
@@ -18,4 +18,4 @@ const domain = [RoomFactory];
     controllers: [],
     providers: [...infrastructure, ...application, ...domain],
 })
-export class RoomsModule {}
+export class HotelModule {}

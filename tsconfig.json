@@ -21,7 +21,7 @@
         "paths": {
             "@/*": ["src/*"],
             "@/database/*": ["src/database/*"],
-            "@/rooms/*": ["src/rooms/*"]
+            "@/hotel/*": ["src/hotel/*"]
         }
     }
 }

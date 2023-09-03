@@ -8,7 +8,7 @@ import { Room, RoomProperties } from "../../domain/models/room.model";
 import { RoomRepository } from "../../domain/repositories/room.repository";
 import { RoomEntity } from "../entities/room.entity";
 
-export class RoomsRepositoryImplement implements RoomRepository {
+export class RoomRepositoryImplement implements RoomRepository {
     @Inject() private readonly roomFactory: RoomFactory;
 
     public async newId(): Promise<string> {

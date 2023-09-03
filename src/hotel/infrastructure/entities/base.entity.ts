@@ -3,11 +3,11 @@ import { CreateDateColumn, DeleteDateColumn, Entity, UpdateDateColumn } from "ty
 @Entity()
 export class BaseEntity {
     @CreateDateColumn()
-    createdAt: Date;
+    createdAt?: Date;
 
     @UpdateDateColumn()
-    updateAt: Date;
+    updateAt?: Date;
 
     @DeleteDateColumn()
-    deletedAt: Date;
+    deletedAt?: Date;
 }
