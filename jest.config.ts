@@ -9,7 +9,7 @@ const jestConfig: JestConfigWithTsJest = {
     roots: ["<rootDir>"],
     testRegex: "..spec.ts$",
     transform: {
-        "^.+.(t|j)s$": "ts-jest",
+        "^.+.(t|j)s$": ["ts-jest", { isolatedModules: true }],
     },
     coverageDirectory: "./coverage",
     collectCoverageFrom: ["**/.(t|j)s"],

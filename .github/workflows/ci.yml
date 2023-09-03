@@ -57,7 +57,7 @@ jobs:
             - name: Add environment variables to .env.test
               run: echo "DATABASE_HOST=${{ env.DATABASE_HOST }}" > .env.test && echo "DATABASE_USER=${{ env.DATABASE_USER }}" >> .env.test && echo "DATABASE_PASSWORD=${{ env.DATABASE_PASSWORD }}" >> .env.test && echo "DATABASE_NAME=${{ env.DATABASE_NAME }}" >> .env.test && echo "DATABASE_PORT=${{ env.DATABASE_PORT }}" >> .env.test && echo "DATABASE_SYNC=${{ env.DATABASE_SYNC }}" >> .env.test && echo "DATABASE_LOGGING=${{ env.DATABASE_LOGGING }}" >> .env.test && echo "PORT=${{ env.PORT }}" >> .env.test && echo "NODE_ENV=${{ env.NODE_ENV }}" >> .env.test
             - name: Test code
-              run: yarn test
+              run: yarn test:ci
     format:
         name: Format code
         runs-on: ubuntu-latest
