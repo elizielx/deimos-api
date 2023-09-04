@@ -37,7 +37,7 @@ class Configuration {
     readonly KAFKA_CLIENT_ID = process.env.KAFKA_CLIENT_ID as string;
 
     @IsArray()
-    readonly KAFKA_BROKERS = process.env.KAFKA_BROKERS.split(", ");
+    readonly KAFKA_BROKERS = process.env.KAFKA_BROKERS.split(", ") as string[];
 
     @IsString()
     readonly KAFKA_CONSUMER_GROUP_ID = process.env.KAFKA_CONSUMER_GROUP_ID as string;

@@ -1,4 +1,4 @@
-import { QueryBus } from "@nestjs/cqrs";
+import { CommandBus, QueryBus } from "@nestjs/cqrs";
 import { Test, TestingModule } from "@nestjs/testing";
 
 import { FindRoomQuery } from "../application/contracts/queries/find-room.query";
@@ -9,6 +9,7 @@ import { RoomController } from "./room.controller";
 describe("RoomController", () => {
     let controller: RoomController;
     let queryBus: QueryBus;
+    let commandBus: CommandBus;
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
@@ -20,11 +21,18 @@ describe("RoomController", () => {
                         execute: jest.fn(),
                     },
                 },
+                {
+                    provide: CommandBus,
+                    useValue: {
+                        execute: jest.fn(),
+                    },
+                },
             ],
         }).compile();
 
         controller = module.get<RoomController>(RoomController);
         queryBus = module.get<QueryBus>(QueryBus);
+        commandBus = module.get<CommandBus>(CommandBus);
     });
 
     describe("findRooms", () => {
@@ -46,6 +54,7 @@ describe("RoomController", () => {
                 ],
             };
             jest.spyOn(queryBus, "execute").mockImplementationOnce(() => Promise.resolve(expectedResult));
+            jest.spyOn(commandBus, "execute").mockImplementationOnce(() => Promise.resolve());
 
             const result = await controller.findRooms(queryString);
 
