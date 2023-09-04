@@ -44,4 +44,16 @@ describe("Configuration", () => {
     it("should have NODE_ENV equal to 'test'", () => {
         expect(Config.NODE_ENV).toBe("test");
     });
+
+    it("should have a string KAFKA_CLIENT_ID", () => {
+        expect(typeof Config.KAFKA_CLIENT_ID).toBe("string");
+    });
+
+    it("should have an array KAFKA_BROKERS", () => {
+        expect(Array.isArray(Config.KAFKA_BROKERS)).toBe(true);
+    });
+
+    it("should have a string KAFKA_CONSUMER_GROUP_ID", () => {
+        expect(typeof Config.KAFKA_CONSUMER_GROUP_ID).toBe("string");
+    });
 });

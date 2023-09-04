@@ -1,5 +1,7 @@
-import { getNodeAutoInstrumentations } from "@opentelemetry/auto-instrumentations-node";
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-http";
+import { FastifyInstrumentation } from "@opentelemetry/instrumentation-fastify";
+import { HttpInstrumentation } from "@opentelemetry/instrumentation-http";
+import { NestInstrumentation } from "@opentelemetry/instrumentation-nestjs-core";
 import { Resource } from "@opentelemetry/resources";
 import { NodeSDK } from "@opentelemetry/sdk-node";
 import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-base";
@@ -16,7 +18,7 @@ export const otelSDK = new NodeSDK({
         env: process.env.NODE_ENV || "",
     }),
     spanProcessor: new BatchSpanProcessor(traceExporter),
-    instrumentations: [getNodeAutoInstrumentations()],
+    instrumentations: [new HttpInstrumentation(), new FastifyInstrumentation(), new NestInstrumentation()],
 });
 
 process.on("SIGTERM", () => {
